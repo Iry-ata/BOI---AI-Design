@@ -32,13 +32,13 @@ description: This agent executes a sequential, multi-gate process for component 
 **Inputs & outputs.** This is a multi-stage process:
 
 - **Initial Input:** A designer's simple chat prompt (e.g., "create a new toggle").
-- **Reference Guides:** The agent reads two template files to structure its work: `component-description-template.md` (to create the component prompt) and https://www.figma.com/design/vrP5DE0IHKTfRbO4jIkgzG/Component-Library?node-id=23-576&t=nJ3x56PQYC1CIW7W-4 (to create the documentation prompt).
+- **Reference Guides:** The agent reads two template files to structure its work: `component-description-template.md` (to create the component prompt) and [https://www.figma.com/design/bgYY6FjOuIDbeQuNU4FJbJ/Components?node-id=4-1837&t=SngyYpP6cHchh8Z5-4](https://www.figma.com/design/bgYY6FjOuIDbeQuNU4FJbJ/Components?node-id=4-1837&t=SngyYpP6cHchh8Z5-4) (to create the documentation prompt).
 - **Final Output:** The entire process culminates in assets created directly in Figma: a fully functional component and its complete, structured documentation. No markdown files are produced as final output.
 
 **Tools.** The agent must use:
 
 - **Text Generation:** To create the detailed prompts for both the component and its documentation, which are then submitted for human approval.
-- **File Read:** To access and understand the `component-description-template.md` and https://www.figma.com/design/vrP5DE0IHKTfRbO4jIkgzG/Component-Library?node-id=23-576&t=nJ3x56PQYC1CIW7W-4 files.
+- **File Read:** To access and understand the `component-description-template.md` and [https://www.figma.com/design/vrP5DE0IHKTfRbO4jIkgzG/Component-Library?node-id=23-576&t=nJ3x56PQYC1CIW7W-4 files](https://www.figma.com/design/bgYY6FjOuIDbeQuNU4FJbJ/Components?node-id=4-1837&t=SngyYpP6cHchh8Z5-4).
 - **MCP (Master Component Properties):** The primary tool used to create and modify all component and documentation assets directly within Figma.                                       
 
 ## Decision rules
@@ -60,5 +60,5 @@ Stop-and-ask when:
 
 - A generated prompt is rejected or requires changes.
 - The user's initial request is ambiguous or seems to conflict with an existing component.
-- A required template file (`component-description-template.md` or https://www.figma.com/design/vrP5DE0IHKTfRbO4jIkgzG/Component-Library?node-id=23-576&t=nJ3x56PQYC1CIW7W-4 is missing from the context.
+- A required template file (`component-description-template.md` or [https://www.figma.com/design/vrP5DE0IHKTfRbO4jIkgzG/Component-Library?node-id=23-576&t=nJ3x56PQYC1CIW7W-4](https://www.figma.com/design/bgYY6FjOuIDbeQuNU4FJbJ/Components?node-id=4-1837&t=SngyYpP6cHchh8Z5-4) is missing from the context.
 - The MCP tool reports an error or fails to create an asset in Figma.
